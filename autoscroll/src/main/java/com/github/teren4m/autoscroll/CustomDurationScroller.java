@@ -18,7 +18,7 @@ public class CustomDurationScroller extends Scroller {
 
     /**
      * not exist in android 2.3
-     * 
+     *
      * @param context
      * @param interpolator
      * @param flywheel
@@ -37,6 +37,6 @@ public class CustomDurationScroller extends Scroller {
 
     @Override
     public void startScroll(int startX, int startY, int dx, int dy, int duration) {
-        super.startScroll(startX, startY, dx, dy, (int)(duration * scrollFactor));
+        super.startScroll(startX, startY, dx, dy, (int) (duration * scrollFactor));
     }
 }

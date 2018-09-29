@@ -1,12 +1,11 @@
 package com.github.teren4m.autoscroll
 
 import android.content.Context
-import android.view.View
-import androidx.viewpager.widget.PagerAdapter
-import android.view.ViewGroup
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
-import java.util.*
+import androidx.viewpager.widget.PagerAdapter
 
 class CustomPagerAdapter(val context: Context, val list: List<Pair<String, Int>>) : PagerAdapter() {
 

@@ -2,8 +2,6 @@ package com.github.teren4m.autoscroll
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
-import com.github.teren4m.autoscroll.AutoScrollViewPager.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
