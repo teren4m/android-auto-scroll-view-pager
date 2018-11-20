@@ -214,8 +214,6 @@ public class AutoScrollViewPager extends ViewPager {
             if ((action == MotionEvent.ACTION_DOWN) && isAutoScroll) {
                 isStopByTouch = true;
                 stopAutoScroll();
-            } else if (ev.getAction() == MotionEvent.ACTION_UP && isStopByTouch) {
-                startAutoScroll();
             }
         }
 
@@ -266,7 +264,7 @@ public class AutoScrollViewPager extends ViewPager {
         private final WeakReference<AutoScrollViewPager> autoScrollViewPager;
 
         public MyHandler(AutoScrollViewPager autoScrollViewPager) {
-            this.autoScrollViewPager = new WeakReference<AutoScrollViewPager>(autoScrollViewPager);
+            this.autoScrollViewPager = new WeakReference(autoScrollViewPager);
         }
 
         @Override
@@ -276,7 +274,7 @@ public class AutoScrollViewPager extends ViewPager {
             switch (msg.what) {
                 case SCROLL_WHAT:
                     AutoScrollViewPager pager = this.autoScrollViewPager.get();
-                    if (pager != null) {
+                    if (pager != null && pager.isAutoScroll) {
                         pager.scroller.setScrollDurationFactor(pager.autoScrollFactor);
                         pager.scrollOnce();
                         pager.scroller.setScrollDurationFactor(pager.swipeScrollFactor);
